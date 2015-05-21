@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  description: MyText
+  priority: 
+  project_id: 
+
+two:
+  title: 
+  description: MyText
+  priority: 
+  project_id: 
