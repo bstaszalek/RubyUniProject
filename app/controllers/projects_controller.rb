@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       render 'new'
+    end
   end
   
   def edit
