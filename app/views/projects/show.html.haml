@@ -1,0 +1,8 @@
+%h1
+  = @project.title
+%p
+  %strong Description:
+  = @project.description
+= link_to 'Back', projects_path
+|
+= link_to 'Edit', edit_project_path(@project)

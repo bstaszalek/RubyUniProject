@@ -1,0 +1,16 @@
+.navbar.navbar-default.navbar-static-top
+  .container
+    %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand{:href => "#"} Ujrails
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to "Projects", projects_path
+        %li
+          - if user_signed_in?
+            = link_to "Sign out", destroy_user_session_path, method: :delete
+          - else
+            = link_to "Sign in", new_user_session_path
