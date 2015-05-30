@@ -27,6 +27,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
+gem 'email_validator'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
