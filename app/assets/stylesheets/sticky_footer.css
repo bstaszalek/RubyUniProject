@@ -6,7 +6,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin: 0 0 60px;
 }
 .footer {
   position: absolute;
@@ -24,8 +24,8 @@ body {
 
 .container {
   width: auto;
-  max-width: 680px;
-  padding: 0 15px;
+  max-width: 800px;
+  padding: 0 50px;
 }
 .container .text-muted {
   margin: 20px 0;
