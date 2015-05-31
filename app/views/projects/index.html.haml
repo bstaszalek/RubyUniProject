@@ -1,19 +1,16 @@
-%h1 Listing projects
-= link_to 'New project', new_project_path
-%table
-  %tr
-    %th Title
-    %th Description
-    %th{:colspan => "2"}
-  - @projects.each do |project|
+%h1 Projects
+%table.table.table-striped
+  %thead
     %tr
-      %td
-        = project.title
-      %td
-        = project.description
-      %td
-        = link_to 'Show', project_path(project)
-      %td
-        = link_to 'Edit', edit_project_path(project)
-      %td
-        = link_to "Destroy project", project_path(project), method: :delete, data: { confirm: 'Czy chcesz usunac?'}
+      %th Title
+      %th Created at
+      %th Actions
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= link_to project.title, project_path(project)
+        %td= project.created_at
+        %td
+          = link_to 'Edit', edit_project_path(project), :class => 'btn btn-mini'
+          = link_to 'Destroy', project_path(project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger'
+= link_to 'New', new_project_path, :class => 'btn btn-primary'

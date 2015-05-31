@@ -1,4 +1,12 @@
-%h2 Hello on ProjectManagment
-
-= link_to "Log In", new_user_session_path, :class => 'btn btn-default navbar-btn'
-= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-default navbar-btn'
+%h2 ProjectManagment System
+- if user_signed_in?
+  Hello
+  - if current_user.first_name == ""
+    User
+  - else
+    = current_user.first_name
+- else
+  %p
+    Hello guest
+  = link_to "Log In", new_user_session_path, :class => 'btn btn-default navbar-btn'
+  = link_to "Sign Up", new_user_registration_path, :class => 'btn btn-default navbar-btn'
