@@ -1,8 +1,25 @@
-%h1
-  = @project.title
-%p
-  %strong Description:
-  = @project.description
-= link_to 'Back', projects_path
-|
-= link_to 'Edit', edit_project_path(@project)
+%body
+  .container
+    %h1
+      = @project.title
+    %p.lead
+      = @project.description
+
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Title
+          %th Priority
+          %th Difficulty
+          %th Status
+        %tbody
+        - @project.tickets.each do |ticket|
+          %tr
+            %td= link_to ticket.title, project_ticket_path(@project, ticket)
+            %td= ticket.priority
+            %td= ticket.difficulty
+            %td= ticket.status
+  = link_to "Edit tickets", project_tickets_path(@project), method: :get, class: "btn btn-default"
+
+= link_to 'Back', projects_path, class: "btn btn-default"
+= link_to 'Edit', edit_project_path(@project), class: "btn btn-default"

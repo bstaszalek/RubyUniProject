@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @ticket = @project.tickets.all
+    @tickets = @project.tickets
   end
   
   def new
@@ -22,7 +22,7 @@ class TicketsController < ApplicationController
   
   def edit
     @project = Project.find(params[:project_id])
-    @ticket = @project.tickets(ticket_params)
+    @ticket = @project.tickets(params[:id])
   end
   
   def update
@@ -41,9 +41,10 @@ class TicketsController < ApplicationController
     @ticket = @project.tickets.find(params[:id])
     @ticket.destroy
     
-    redirect_to project_tickets_path
+    redirect_to project_tickets_path(@project.id, @ticket)
   end
   
+  private
   def ticket_params
     params.require(:ticket).permit(:title, :description, :priority, :difficulty, :status)
   end

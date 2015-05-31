@@ -1,0 +1,20 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th Priority
+      %th Difficulty
+      %th Status
+      %th Actions
+  %tbody
+    - @project.tickets.each do |ticket|
+      %tr
+        %td= link_to ticket.title, project_ticket_path(@project, ticket)
+        %td= ticket.priority
+        %td= ticket.difficulty
+        %td= ticket.status
+        %td  
+          = link_to 'Edit', edit_project_ticket_path(@project, ticket), :class => 'btn btn-mini btn-success'
+          = link_to 'Destroy', project_ticket_path(@project, ticket), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger'
+= link_to "New ticket", new_project_ticket_path, method: :get, class: "btn btn-default"
+= link_to 'Back', project_path(@project), class: "btn btn-default"

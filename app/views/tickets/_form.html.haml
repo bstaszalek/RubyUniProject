@@ -1,0 +1,11 @@
+= simple_form_for [@project, @ticket] do |f|
+  = f.error_notification
+  = f.input :title
+  = f.input :description
+  = f.input :priority do
+    = f.select :priority, ['Very Low','Low', 'Normal', 'High', 'Very High',]
+  = f.input :difficulty do
+    = f.select :priority, ['Very Easy', 'Easy', 'Medium','Hard', 'Very Hard']
+  = f.input :status do
+    = f.select :status, ['Open', 'Closed', 'Cancelled']
+  = f.button :submit
