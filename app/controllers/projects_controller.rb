@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
+
   def index
-    @projects = current_user.projects.all
+    @projects = current_user.projects.all.paginate(:page => params[:page], :per_page => 5)
   end
   
   def new

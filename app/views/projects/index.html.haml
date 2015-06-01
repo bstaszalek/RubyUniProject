@@ -1,16 +1,22 @@
+
 %h1 Projects
-%table.table.table-striped
+
+%table#projects.table.table-striped
   %thead
     %tr
       %th Title
       %th Created at
+      %th Updated at
       %th Actions
   %tbody
     - @projects.each do |project|
       %tr
         %td= link_to project.title, project_path(project)
         %td= project.created_at
+        %td= project.updated_at
         %td
           = link_to 'Edit', edit_project_path(project), :class => 'btn btn-mini btn-success'
           = link_to 'Destroy', project_path(project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger'
+= will_paginate @projects, renderer: BootstrapPagination::Rails
+%p
 = link_to 'New', new_project_path, :class => 'btn btn-primary'

@@ -22,6 +22,14 @@
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
-.table {
-    width: 900px;
+#projects {
+    width: 100%;
+}
+
+#ptickets{
+    width: 70%
+}
+
+#tickets{
+    width: 100%
 }
