@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
+    @tickets = @project.tickets.paginate(:page => params[:page], :per_page => 20)
   end
   
   def update

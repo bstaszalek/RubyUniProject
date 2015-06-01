@@ -4,7 +4,7 @@
     = @project.title
   %p.lead
     = @project.description
-
+  
   %table#ptickets.table.table-striped
     %thead
       %tr
@@ -19,6 +19,7 @@
           %td= ticket.priority
           %td= ticket.difficulty
           %td= ticket.status
+      = will_paginate @tickets, renderer: BootstrapPagination::Rails
   = link_to "Edit tickets", project_tickets_path(@project), method: :get, class: "btn btn-default"
   = link_to 'Edit project', edit_project_path(@project), class: "btn btn-default"
   %p

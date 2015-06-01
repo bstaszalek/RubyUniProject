@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @tickets = @project.tickets
+    @tickets = @project.tickets.paginate(:page => params[:page], :per_page => 5)
   end
   
   def new

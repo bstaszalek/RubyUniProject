@@ -7,19 +7,21 @@
       %th Status
       %th Actions
   %tbody
-    - @project.tickets.each do |ticket|
+    - @tickets.each do |ticket|
       %tr
         %td= link_to ticket.title, project_ticket_path(@project, ticket)
         %td= ticket.priority
         %td= ticket.difficulty
         %td= ticket.status
         %td  
-          = link_to 'Edit', edit_project_ticket_path(@project, ticket), :class => 'btn btn-success'
+          = link_to 'Edit', project_ticket_path(@project, ticket), :class => 'btn btn-success'
           = link_to project_ticket_path(@project, ticket), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' do
             %span.glyphicon.glyphicon-minus   
-            Delete 
+            Delete
+= will_paginate @tickets, renderer: BootstrapPagination::Rails
+%p
 = link_to new_project_ticket_path, method: :get, class: "btn btn-default" do
   %span.glyphicon.glyphicon-plus{"aria-hidden" => "true"}
-  New Ticket
+  New Ticket  
 %p
 = link_to 'Back', project_path(@project), class: "btn btn-default"
