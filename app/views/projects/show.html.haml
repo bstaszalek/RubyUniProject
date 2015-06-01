@@ -20,5 +20,6 @@
           %td= ticket.difficulty
           %td= ticket.status
   = link_to "Edit tickets", project_tickets_path(@project), method: :get, class: "btn btn-default"
+  = link_to 'Edit project', edit_project_path(@project), class: "btn btn-default"
+  %p
   = link_to 'Back', projects_path, class: "btn btn-default"
-  = link_to 'Edit', edit_project_path(@project), class: "btn btn-default"

@@ -1,18 +1,11 @@
-%body
-.container
-  %h1
-    = @ticket.title
-  %p.lead
-    = @ticket.description
-
-  %p
-    = @ticket.difficulty
-  %p
-    = @ticket.priority
-  %p
-    = @ticket.status
-  
-  
-  = link_to "Edit tickets", project_tickets_path(@project), method: :get, class: "btn btn-default"
-  = link_to 'Back', :back
-  = link_to 'Edit', edit_project_path(@project), class: "btn btn-default"
+= simple_form_for ([@project, @ticket]) do |f|
+  = f.error_notification
+  = f.input :title
+  = f.input :description
+  = f.input :priority do
+    = f.select :priority, ['Very Low','Low', 'Normal', 'High', 'Very High',]
+  = f.input :difficulty do
+    = f.select :priority, ['Very Easy', 'Easy', 'Medium','Hard', 'Very Hard']
+  = f.input :status do
+    = f.select :status, ['Open', 'Closed', 'Cancelled']
+  = f.button :submit
