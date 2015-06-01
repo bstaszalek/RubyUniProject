@@ -1,0 +1,18 @@
+%body
+.container
+  %h1
+    = @ticket.title
+  %p.lead
+    = @ticket.description
+
+  %p
+    = @ticket.difficulty
+  %p
+    = @ticket.priority
+  %p
+    = @ticket.status
+  
+  
+  = link_to "Edit tickets", project_tickets_path(@project), method: :get, class: "btn btn-default"
+  = link_to 'Back', :back
+  = link_to 'Edit', edit_project_path(@project), class: "btn btn-default"

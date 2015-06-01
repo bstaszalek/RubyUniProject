@@ -21,3 +21,9 @@
  */
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.container {
+  width: auto;
+  max-width: 800px;
+  padding: 0 50px;
+}

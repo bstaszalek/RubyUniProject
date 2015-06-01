@@ -44,6 +44,11 @@ class TicketsController < ApplicationController
     redirect_to project_tickets_path(@project.id, @ticket)
   end
   
+  def show
+    @project = Project.find(params[:project_id])
+    @ticket = @project.tickets.find(params[:id])
+  end
+  
   private
   def ticket_params
     params.require(:ticket).permit(:title, :description, :priority, :difficulty, :status)
