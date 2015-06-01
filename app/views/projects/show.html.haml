@@ -15,7 +15,7 @@
       %tbody
       - @project.tickets.each do |ticket|
         %tr
-          %td= link_to ticket.title, project_ticket_path(@project, ticket)
+          %td= ticket.title
           %td= ticket.priority
           %td= ticket.difficulty
           %td= ticket.status

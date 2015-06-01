@@ -16,7 +16,9 @@
         %td= project.updated_at
         %td
           = link_to 'Edit', edit_project_path(project), :class => 'btn btn-mini btn-success'
-          = link_to 'Destroy', project_path(project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger'
+          = link_to 'Delete', project_path(project), :method => :delete, :class => 'btn btn-mini btn-danger', data: { confirm: 'Are you sure you want to delete this project?' }
 = will_paginate @projects, renderer: BootstrapPagination::Rails
 %p
-= link_to 'New', new_project_path, :class => 'btn btn-primary'
+= link_to new_project_path, :class => 'btn btn-primary' do
+  %span.glyphicon.glyphicon-plus
+  New Project

@@ -33,3 +33,8 @@
 #tickets{
     width: 100%
 }
+
+body{
+  background-image: image-url('Gradient-Background_121.jpg');
+  background-size: 100%;
+}
