@@ -21,7 +21,7 @@
  */
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
-
+*= require cookie_alert
 #projects {
     width: 100%;
 }
@@ -32,9 +32,4 @@
 
 #tickets{
     width: 100%
-}
-
-body{
-  background-image: image-url('Gradient-Background_121.jpg');
-  background-size: 100%;
 }

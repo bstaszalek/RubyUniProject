@@ -31,6 +31,7 @@ gem 'email_validator'
 gem "haml-rails", "~> 0.9"
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
+gem "cookie_alert"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -4,5 +4,8 @@
 body{
   background-image: image-url('Gradient-Background_121.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

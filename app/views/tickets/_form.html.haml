@@ -3,9 +3,12 @@
   = f.input :title
   = f.input :description
   = f.input :priority do
+    %p
     = f.select :priority, ['Very Low','Low', 'Normal', 'High', 'Very High',]
   = f.input :difficulty do
+    %p
     = f.select :difficulty, ['Very Easy', 'Easy', 'Medium','Hard', 'Very Hard']
   = f.input :status do
+    %p
     = f.select :status, ['Open', 'Closed', 'Cancelled']
   = f.button :submit
